@@ -1,10 +1,8 @@
 # SUMMARY
 
-- [README](README.md)
+- [🫡 Hello, World!](README.md)
 
-- [Test1](/test/test1.md)
-  - [Test2](/test/test2.md)
+## CONTENTS
 
-## Test
-
-- [Test3](test3.md)
+- [개발환경](/environment/README.md)
+  - [Initial Settings](/environment/initial-settings.md)
