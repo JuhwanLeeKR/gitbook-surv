@@ -2,115 +2,121 @@
 
 ## TypeScript + React + Jest + ESLint + Parcel 개발 환경 설정
 
-1. 폴더 생성 및 패키지 생성
+### 1. 폴더 생성 및 패키지 생성
 
-   ```zsh
-   mkdir project-init
+```zsh
+mkdir project-init
 
-   cd project-init
-   ```
+cd project-init
+```
 
-   ```zsh
-   npm init -y
-   ```
+```zsh
+npm init -y
+```
 
-2. `.gitignore` 파일을 작성
+### 2. `.gitignore` 파일을 작성
 
-   ```zsh
-   touch .gitignore
-   ```
+```zsh
+touch .gitignore
+```
 
-   [gitignore.io](https://www.toptal.com/developers/gitignore)
+💡 Tip
 
-3. 타입스크립트 설정
+- [gitignore.io](https://www.toptal.com/developers/gitignore)
+- [gitignore examples in github](https://github.com/github/gitignore)
 
-   ```zsh
-   npm i -D typescript
+### 3. 타입스크립트 설정
 
-   npx tsc --init
-   ```
+```zsh
+npm i -D typescript
 
-4. `tsconfig.json` 파일 수정
+npx tsc --init # 초기화 및 tsconfig.json 파일 생성
+```
 
-   ```json
-   {
-     "compilerOptions": {
-       ...
-       "jsx": "react-jsx"
-       ...
-     },
-     // 추후에 설치할 jest와 eslint를 위해 우선 작성
-     "include": ["./jest-setup.ts", "./.eslintrc.js", "src/**/*"],
-     "exclude": ["node_modules", "build", "dist"]
-   }
-   ```
+### 4. `tsconfig.json` 파일 수정
 
-5. ESLint 설정
+```json
+{
+  "compilerOptions": {
+    ...
+    "jsx": "react-jsx" // react를 사용할 예정이므로 주석 해
+    ...
+  },
+  // 추후에 설치할 jest와 eslint를 위해 우선 작성
+  "include": ["./jest-setup.ts", "./.eslintrc.js", "src/**/*"],
+  "exclude": ["node_modules", "build", "dist"]
+}
+```
 
-   ```zsh
-   npm i -D eslint
+### 5. ESLint 설정
 
-   npx eslint --init
-   ```
+```zsh
+npm i -D eslint
 
-6. `.eslintrc.js` 파일 수정
+npx eslint --init
 
-   ```js
-   module.exports = {
-   	env: {
-   		browser: true,
-   		es2021: true,
-   		// jest 설치 전 미리 세팅
-   		jest: true,
-   	},
-   	extends: [
-   		'xo',
-   		'plugin:react/recommended',
-   		'plugin:react/jsx-runtime',
-   		'prettier',
-   	],
-   	overrides: [
-   		{
-   			env: {
-   				node: true,
-   			},
-   			files: ['.eslintrc.{js,cjs}'],
-   			parserOptions: {
-   				sourceType: 'script',
-   			},
-   		},
-   		{
-   			extends: ['xo-typescript'],
-   			files: ['*.ts', '*.tsx'],
-   		},
-   	],
-   	parserOptions: {
-   		ecmaVersion: 'latest',
-   		sourceType: 'module',
-   	},
-   	plugins: ['react'],
-   	rules: {},
-   	settings: {
-   		react: {
-   			version: 'detect',
-   		},
-   	},
-   };
-   ```
+Ok to proceed? (y)
+```
 
-7. `.eslintignore` 파일을 작성
+### 6. `.eslintrc.js` 파일 수정
 
-   `.gitignore` 파일 내용과 일치해도 무방
+```js
+module.exports = {
+ env: {
+  browser: true,
+  es2021: true,
+  jest: true, // jest 설치 전 미리 세팅
+ },
+ extends: [
+  'xo',
+  'plugin:react/recommended',
+  'plugin:react/jsx-runtime',
+  // local에서 prettier를 사용하기 때문에 추가
+  // 해당 과정은 prettier 설치 및 설정이 적용되어 있지 않습니다.
+  'prettier', 
+ ],
+ overrides: [
+  {
+   env: {
+    node: true,
+   },
+   files: ['.eslintrc.{js,cjs}'],
+   parserOptions: {
+    sourceType: 'script',
+   },
+  },
+  {
+   extends: ['xo-typescript'],
+   files: ['*.ts', '*.tsx'],
+  },
+ ],
+ parserOptions: {
+  ecmaVersion: 'latest',
+  sourceType: 'module',
+ },
+ plugins: ['react'],
+ rules: {},
+ settings: {
+  react: {
+   version: 'detect',
+  },
+ },
+};
+```
 
-8. 리액트 설치
+### 7. `.eslintignore` 파일을 작성
 
-   ```zsh
-   npm i react react-dom
+`.gitignore` 파일 내용과 일치해도 무방
 
-   npm i -D @types/react @types/react-dom
-   ```
+### 8. 리액트 설치
 
-9. 테스팅 도구 설치
+```zsh
+npm i react react-dom
+
+npm i -D @types/react @types/react-dom
+```
+
+### 9. 테스팅 도구 설치
 
 ```zsh
 npm i -D jest @types/jest @swc/core @swc/jest \
@@ -118,73 +124,77 @@ npm i -D jest @types/jest @swc/core @swc/jest \
     @testing-library/react @testing-library/jest-dom
 ```
 
-10. `jest-setup.ts` 파일 생성
+### 10. `jest-setup.ts` 파일 생성
 
-    ```ts
-    import '@testing-library/jest-dom';
-    ```
+```ts
+import '@testing-library/jest-dom';
+```
 
-11. `jest.config.js` 파일을 작성해 테스트에서 SWC를 사용
+### 11. `jest.config.js` 파일을 작성해 테스트에서 SWC를 사용
 
-    ```js
-    module.exports = {
-    	testEnvironment: 'jsdom',
-    	setupFilesAfterEnv: [
-    		'@testing-library/jest-dom/extend-expect',
-    		'./jest.setup',
-    	],
-    	transform: {
-    		'^.+\\.(t|j)sx?$': [
-    			'@swc/jest',
-    			{
-    				jsc: {
-    					parser: {
-    						syntax: 'typescript',
-    						jsx: true,
-    						decorators: true,
-    					},
-    					transform: {
-    						react: {
-    							runtime: 'automatic',
-    						},
-    					},
-    				},
-    			},
-    		],
-    	},
-    	testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/'],
-    };
-    ```
+```js
+module.exports = {
+  testEnvironment: 'jsdom',
+  setupFilesAfterEnv: [
+    '@testing-library/jest-dom/extend-expect',
+    './jest.setup',
+  ],
+  transform: {
+    '^.+\\.(t|j)sx?$': [
+      '@swc/jest',
+      {
+        jsc: {
+          parser: {
+            syntax: 'typescript',
+            jsx: true,
+            decorators: true,
+          },
+          transform: {
+            react: {
+              runtime: 'automatic',
+            },
+          },
+        },
+      },
+    ],
+  },
+  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/'],
+};
 
-12. Parcel 설치
+```
 
-    ```zsh
-    npm i -D parcel
-    ```
+### 12. Parcel (bundler) 설치
 
-13. `package.json` 파일의 scripts를 적절히 수정한다.
+```zsh
+npm i -D parcel
+```
 
-    ```json
-    ...
-    "scripts": {
-      "start": "parcel --port 8080",
-      "build": "parcel build",
-      "check": "tsc --noEmit",
-      "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
-      "test": "jest",
-      "coverage": "jest --coverage --coverage-reporters html",
-      "watch:test": "jest --watchAll"
-    },
-    ...
-    ```
+### 13. `package.json` 파일의 scripts를 적절히 수정한다
 
-14. 기본 코드 추가
-    - `index.html`
-    - `src/main.tsx`
-    - `src/App.tsx`
-    - `src/App.test.tsx`
-    - `src/components/Greeting.test.tsx`
-    - `src/components/Greeting.tsx`
+```json
+...
+"scripts": {
+  "start": "parcel --port 8080",
+  "build": "parcel build",
+  "check": "tsc --noEmit",
+  "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
+  "test": "jest",
+  "coverage": "jest --coverage --coverage-reporters html",
+  "watch:test": "jest --watchAll"
+},
+...
+```
+
+### 14. 기본 코드 추가
+
+- `index.html`
+- `src/main.tsx`
+- `src/App.tsx`
+- `src/App.test.tsx`
+- `src/components/Greeting.test.tsx`
+- `src/components/Greeting.tsx`
+
+***
 
 ### 기타 링크
 
