@@ -76,7 +76,7 @@ module.exports = {
   'plugin:react/jsx-runtime',
   // local에서 prettier를 사용하기 때문에 추가
   // 해당 과정은 prettier 설치 및 설정이 적용되어 있지 않습니다.
-  'prettier', 
+  'prettier',
  ],
  overrides: [
   {
@@ -260,6 +260,20 @@ export default function App() {
 - `src/App.test.tsx`
 - `src/components/Greeting.test.tsx`
 - `src/components/Greeting.tsx`
+
+### 15. `.nvmrc`파일 추가 (선택)
+
+동일한 환경에서 개발하기 위함 (fnm에서 `.nvmrc`, `.node-version` 파일을 감지하고 버전을 맞춰 줌)
+
+```zsh
+touch .nvmrc
+```
+
+[`.nvmrc` 파일 작성 가이드 바로가기]((/environment/nvmrc.md))
+
+```zsh
+v18.17.0 # 프로젝트에 사용된 버전을 명시
+```
 
 ***
 
