@@ -6,3 +6,4 @@
 
 - [개발 환경 설정](/environment/README.md)
   - [Initial Settings](/environment/initial-settings.md)
+  - [Typescript](/environment/typscript.md)
