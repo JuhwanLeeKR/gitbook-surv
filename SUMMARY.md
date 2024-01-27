@@ -10,3 +10,4 @@
   - [React](/environment/react.md)
   - [Testing Library](/environment/testing-library.md)
   - [ESLint](/environment/eslint.md)
+  - [.nvmrc](/environment/nvmrc.md)
