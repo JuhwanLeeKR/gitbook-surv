@@ -10,4 +10,4 @@
   - [React](/environment/react.md)
   - [Testing Library](/environment/testing-library.md)
   - [ESLint](/environment/eslint.md)
-  - [.nvmrc](/environment/nvmrc.md)
+  - [.nvmrc 파일 작성 가이드](/environment/nvmrc.md)

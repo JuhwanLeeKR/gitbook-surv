@@ -269,7 +269,7 @@ export default function App() {
 touch .nvmrc
 ```
 
-[`.nvmrc` 파일 작성 가이드 바로가기]((/environment/nvmrc.md))
+[`.nvmrc` 파일 작성 가이드 바로가기](/environment/nvmrc.md)
 
 ```zsh
 v18.17.0 # 프로젝트에 사용된 버전을 명시
