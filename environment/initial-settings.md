@@ -178,11 +178,85 @@ npm i -D parcel
 ...
 ```
 
-### 13. 기본 코드 추가
+### 13. Parcel에서 정적 파일 빌드를 위한 설정
+
+해당 설정을 해주어야 static 폴더의 파일을 정적 파일로 Serving할 수 있다(Assets)
+
+```zsh
+npm i -D parcel-reporter-static-files-copy
+```
+
+- 정적 파일 폴더 생성
+
+```zsh
+touch static # parcel-reporter-static-files-copy 기본 폴더
+```
+
+- `.parcelrc` 파일 root에 생성
+
+```json
+{
+ "extends": [
+  "@parcel/config-default"
+ ],
+ "reporters": [
+  "...",
+  "parcel-reporter-static-files-copy"
+ ]
+}
+```
+
+### 14. 기본 코드 추가
 
 - `index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="=ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Initial Project</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./src/main.tsx"></script>
+  </body>
+</html>
+```
+
 - `src/main.tsx`
+
+```tsx
+import ReactDOM from 'react-dom/client';
+
+import App from './App';
+
+function main() {
+ const element = document.getElementById('root');
+
+ if (!element) {
+  return;
+ }
+
+ const root = ReactDOM.createRoot(element);
+
+ root.render(<App />);
+}
+
+main();
+```
+
 - `src/App.tsx`
+
+```tsx
+export default function App() {
+ return <>Hello, world</>;
+}
+```
+
+(선택)
+
 - `src/App.test.tsx`
 - `src/components/Greeting.test.tsx`
 - `src/components/Greeting.tsx`
