@@ -39,11 +39,14 @@ npx tsc --init # 초기화 및 tsconfig.json 파일 생성
 {
   "compilerOptions": {
     ...
-    "jsx": "react-jsx" // react를 사용할 예정이므로 주석 해
+    "types": [
+      "@testing-library/jest-dom" // @testing-library/jest-dom v6 이상을 위한 설정
+    ],
+    ...
+    "jsx": "react-jsx", // react를 사용할 예정
     ...
   },
-  // 추후에 설치할 jest와 eslint를 위해 우선 작성
-  "include": ["./jest-setup.ts", "./.eslintrc.js", "src/**/*"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "build", "dist"]
 }
 ```
@@ -124,52 +127,42 @@ npm i -D jest @types/jest @swc/core @swc/jest \
     @testing-library/react @testing-library/jest-dom
 ```
 
-### 10. `jest-setup.ts` 파일 생성
-
-```ts
-import '@testing-library/jest-dom';
-```
-
-### 11. `jest.config.js` 파일을 작성해 테스트에서 SWC를 사용
+### 10. `jest.config.js` 파일을 작성해 테스트에서 SWC를 사용
 
 ```js
 module.exports = {
-  testEnvironment: 'jsdom',
-  setupFilesAfterEnv: [
-    '@testing-library/jest-dom/extend-expect',
-    './jest.setup',
-  ],
-  transform: {
-    '^.+\\.(t|j)sx?$': [
-      '@swc/jest',
-      {
-        jsc: {
-          parser: {
-            syntax: 'typescript',
-            jsx: true,
-            decorators: true,
-          },
-          transform: {
-            react: {
-              runtime: 'automatic',
-            },
-          },
-        },
+ testEnvironment: 'jsdom',
+ setupFilesAfterEnv: ['@testing-library/jest-dom'],
+ transform: {
+  '^.+\\.(t|j)sx?$': [
+   '@swc/jest',
+   {
+    jsc: {
+     parser: {
+      syntax: 'typescript',
+      jsx: true,
+      decorators: true,
+     },
+     transform: {
+      react: {
+       runtime: 'automatic',
       },
-    ],
-  },
-  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/'],
+     },
+    },
+   },
+  ],
+ },
+ testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/'],
 };
-
 ```
 
-### 12. Parcel (bundler) 설치
+### 11. Parcel (bundler) 설치
 
 ```zsh
 npm i -D parcel
 ```
 
-### 13. `package.json` 파일의 scripts를 적절히 수정한다
+### 12. `package.json` 파일의 scripts를 적절히 수정한다
 
 ```json
 ...
@@ -185,7 +178,7 @@ npm i -D parcel
 ...
 ```
 
-### 14. 기본 코드 추가
+### 13. 기본 코드 추가
 
 - `index.html`
 - `src/main.tsx`
