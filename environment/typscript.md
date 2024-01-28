@@ -8,14 +8,13 @@
 
 ```zsh
 npx ts-node # 실행
- 
+
 Ctrl + C or .exit # 종료
 ```
 
 ## 타입 지정하기 (Simple examples)
 
-- typescript 공식 문서 읽는 것을 더 추천한다
-[Typescript 공식 홈페이지](https://www.typescriptlang.org/)
+- [Typescript 공식 문서](https://www.typescriptlang.org/) 읽는 것을 더 추천한다
 
 ```ts
 let name: string;
