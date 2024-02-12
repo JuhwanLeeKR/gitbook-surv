@@ -3,7 +3,8 @@
 - var: 함수 스코프
 - let, const: 블록 스코프, TDZ
 
-> **TDZ (Temporal Dead Zone)** 란?
+> **TDZ (Temporal Dead Zone)란?**
+>
 > 변수가 선언된 스코프의 시작 지점부터 변수가 초기화되는 지점까지 해당 변수에 접근할 수 없는 구간
 > let과 const는 호이스팅되지만 스코프 내에서 선언되기 전에는 변수에 접근할 수 없다
 
@@ -33,7 +34,8 @@ var setTimeout = 'setTimeout'
 // 전역으로 setTimeout으로 변수를 선언할 경우 window API인 setTimeout을 사용할 수 없다
 ```
 
-> **Monkey patch**란?
+> **Monkey patch란?**
+>
 > 소스코드를 변경하지 않고 실행 시 코드 기본 동작을 추가, 변경 또는 억제하는 기술이다.
 > 쉽게 말해 어떤 기능을 위해 이미 있던 코드에 삽입하는 것을 말한다.
 
