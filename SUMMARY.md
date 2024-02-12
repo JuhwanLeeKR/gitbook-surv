@@ -22,5 +22,6 @@
 - [Javascript](/clean-code-js/README.md)
   - [변수(Variable)](/clean-code-js/variable.md)
   - [타입(Type)](/clean-code-js/type.md)
+  - [경계값(Boundary Value)](/clean-code-js/boundary-value.md)
 
 - [React](/clean-code-react/README.md)
