@@ -20,8 +20,9 @@
 ## CLEAN CODE
 
 - [Javascript](/clean-code-js/README.md)
-  - [변수(Variable)](/clean-code-js/variable.md)
-  - [타입(Type)](/clean-code-js/type.md)
-  - [경계값(Boundary Value)](/clean-code-js/boundary-value.md)
+  - [변수 (Variable)](/clean-code-js/variable.md)
+  - [타입 (Type)](/clean-code-js/type.md)
+  - [경계값 (Boundary Value)](/clean-code-js/boundary-value.md)
+  - [분기 다루기 (Branch Handling)](/clean-code-js/branch-handling.md)
 
 - [React](/clean-code-react/README.md)
