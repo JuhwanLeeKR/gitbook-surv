@@ -15,7 +15,9 @@
 
 - [React](/react/README.md)
   - [jsx](/react/jsx.md)
-  - [📎 Links](/react/links.md)
+  - [component](/react/react-component.md)
+  - [state](/react/react-state.md)
+  <!-- - [📎 Links](/react/links.md) -->
 
 ## CLEAN CODE
 

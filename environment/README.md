@@ -1,5 +1,7 @@
 # Environment
 
+<!-- TODO: 키워드 학습 정리
+
 ## 학습키워드
 
 ### Initial Settings
@@ -39,4 +41,4 @@
 - Bundler(번들러)
   - Parcel
 - Lint(린트)
-  - ESLint
+  - ESLint -->
