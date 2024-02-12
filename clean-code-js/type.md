@@ -75,6 +75,9 @@ Object.prototype.toString.call(date) // '[object Date]'
 
 ![undefined-null](/assets/undefined-null.png)
 
+- undefined란 기본값
+- undefined와 null에 대한 팀에서 컨벤션이 있는 것이 좋다
+
 ```js
 !null // true
 !!null // false
@@ -86,12 +89,9 @@ null === false // false
 null + 123 // 123
 ```
 
-- undefined란 기본값
-- undefined와 null에 대한 팀에서 컨벤션이 있는 것이 좋다
-
 - undefined, null: 값이 없거나 정의되지 않은 명시적인 표현
-- undefined: NaN에 가깝고, type은 undefined 이다
-- null: 0에 가깝고, type은 object이다
+  - undefined: NaN에 가깝고, type은 undefined 이다
+  - null: 0에 가깝고, type은 object이다
 
 ## eqeq(==) 줄이기
 
