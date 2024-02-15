@@ -36,8 +36,6 @@ REST는 자원 기반의 구조 설계에 있어 HTTP 메소드를 통해 자원
 >4. 상태 관리: REST는 상태를 유지하지 않는(stateless) 통신을 원칙으로 한다. 이는 각 요청이 독립적이라는 장점을 가지지만, 복잡한 트랜잭션이나 사용자 세션 관리에서 추가적인 로직을 서버 측에 구현해야 하는 단점도 있다.
 >5. 효율적인 캐싱의 어려움: REST API를 사용할 때, HTTP 헤더를 통한 캐싱 전략을 구현할 수 있으나, 복잡한 동적 콘텐츠의 경우 효율적인 캐싱이 어려울 수 있다. 이는 네트워크 요청의 수를 줄이고 성능을 향상시키는 데 제한적일 수 있다.
 
-<br/>
-
 >❓ **N+1 문제란 무엇일까?**
 >
 >N+1 문제는 데이터베이스 쿼리의 비효율적인 패턴을 가리키는 용어로, 주로 ORM(Object-Relational Mapping)을 사용할 때 발생한다. 이 문제는 하나의 데이터를 가져온 후, 연관된 데이터를 가져오기 위해 추가적인 쿼리가 N번 실행되어야 하는 상황을 말한다. 여기서 "N"은 처음에 가져온 데이터의 수를 의미한다.
@@ -96,10 +94,10 @@ REST는 자원 기반의 구조 설계에 있어 HTTP 메소드를 통해 자원
 
 >**참고 링크**
 >
->[REST API](https://restfulapi.net/)
->[GraphQL](https://graphql.org/)
->[JSON](https://www.json.org/json-en.html)
->[선언형 vs 명령형 프로그래밍](https://tylermcginnis.com/imperative-vs-declarative-programming/)
->[단일 책임 원칙](https://en.wikipedia.org/wiki/Single-responsibility_principle)
->[Atomic Design](https://atomicdesign.bradfrost.com/)
->[React 공식 문서](https://reactjs.org/docs/components-and-props.html)
+>- [REST API](https://restfulapi.net/)
+>- [GraphQL](https://graphql.org/)
+>- [JSON](https://www.json.org/json-en.html)
+>- [선언형 vs 명령형 프로그래밍](https://tylermcginnis.com/imperative-vs-declarative-programming/)
+>- [단일 책임 원칙](https://en.wikipedia.org/wiki/Single-responsibility_principle)
+>- [Atomic Design](https://atomicdesign.bradfrost.com/)
+>- [React 공식 문서](https://reactjs.org/docs/components-and-props.html)
