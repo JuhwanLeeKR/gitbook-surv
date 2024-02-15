@@ -2,17 +2,33 @@
 
 <!-- TODO: thinking react 문서 읽기 -->
 
-<!-- - REST API 와 GraphQL
-  - REST API 란 무엇인가
-  - GraphQL은 왜 등장했는가?
-  - REST API vs GraphQL
-- JSON
-- DSL(Domain-Specific Language)
-- 선언형 프로그래밍
-- 명령형 프로그래밍
-- SRP(단일 책임 원칙)
-- Atomic Design
-- React component 와 props -->
+## React Component와 Props
+
+### React Component
+
+React 컴포넌트는 React 앱을 구성하는 기본 단위이다. 컴포넌트는 함수형 또는 클래스형으로 정의할 수 있으며, 각각의 컴포넌트는 독립적인 UI 조각을 나타낸다. 이를 통해 개발자는 복잡한 UI를 재사용 가능한 개별 컴포넌트로 분해하여 앱을 구성할 수 있다.
+
+- 함수형 컴포넌트로 간단한 메시지를 표시하는 컴포넌트
+
+```jsx
+function WelcomeMessage(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+```
+
+### Props
+
+Props는 properties의 줄임말로, 컴포넌트에 데이터를 전달하는 방법이다. 부모 컴포넌트에서 자식 컴포넌트로 props를 통해 데이터를 전달하며, 이 데이터는 자식 컴포넌트 내에서 읽기 전용이다. Props를 사용하면 컴포넌트의 재사용성을 높이고, 동적인 데이터를 다룰 수 있다.
+
+- `WelcomeMessage` 컴포넌트에 `name` prop을 전달하여 사용하는 방법
+
+```jsx
+function App() {
+  return <WelcomeMessage name="World" />;
+}
+```
+
+React 컴포넌트와 props를 사용하면 UI를 구성하는 기본 블록을 정의하고, 이 블록들을 조합하여 복잡한 사용자 인터페이스를 쉽게 구축할 수 있다. Props는 컴포넌트 간의 계약 같은 것으로, 어떤 정보가 필요하고, 컴포넌트가 어떻게 동작해야 하는지를 정의한다.
 
 ## REST API 와 GraphQL
 
@@ -68,36 +84,44 @@ REST는 자원 기반의 구조 설계에 있어 HTTP 메소드를 통해 자원
 
 ## DSL (Domain-Specific Language)
 
-**DSL**은 특정 영역에 특화된 프로그래밍 언어다. 특정 분야의 문제를 해결하기 위해 만들어지며, SQL이나 HTML과 같은 언어가 이에 해당한다.
+**DSL**은 특정 도메인(domain) 또는 분야에 특화된 프로그래밍 언어다.
+일반적인 프로그래밍 언어가 다양한 종류의 문제를 해결하기 위해 설계된 반면, DSL은 특정 분야의 문제 해결에 최적화되어 있다.
+
+예를 들어, SQL은 데이터베이스 쿼리를 작성하기 위한 DSL이며, HTML은 웹 페이지를 마크업하기 위한 DSL이다.
+이러한 언어들은 각각의 영역에서 더 효율적인 문제 해결을 가능하게 한다.
 
 ## 선언형 프로그래밍
 
-**선언형 프로그래밍**은 '무엇을 할 것인가'에 초점을 맞춘 프로그래밍 패러다임이다. 결과를 얻기 위해 원하는 바를 선언하는 방식이며, SQL이 대표적인 예이다.
+**선언형 프로그래밍**은 프로그램이 '무엇을(what)' 할 것인지에 초점을 맞추는 프로그래밍 패러다임이다.
+이 방식은 최종 결과를 얻기 위해 원하는 조건을 선언하며, '어떻게(how)' 해당 결과를 도출할지는 선언하지 않는다.
+
+SQL은 선언형 프로그래밍의 좋은 예로, 데이터베이스에서 원하는 데이터를 '어떻게' 검색할지는 명시하지 않고 '무엇을' 검색할지만을 선언한다.
 
 ## 명령형 프로그래밍
 
-**명령형 프로그래밍**은 '어떻게 할 것인가'에 초점을 맞춘 프로그래밍 패러다임이다. 알고리즘을 명시하고 명령어를 통해 컴퓨터에게 작업을 수행하게 한다.
+**명령형 프로그래밍**은 '어떻게(how)' 작업을 수행할지에 초점을 맞춘 프로그래밍 패러다임이다.
+이는 알고리즘의 각 단계를 명시하고, 컴퓨터에게 명령을 내리는 방식으로 진행된다.
+
+C, Java와 같은 전통적인 프로그래밍 언어들이 명령형 프로그래밍에 해당한다.
+개발자는 명확한 컨트롤 플로우를 정의하여 프로그램이 어떻게 상태 변화를 이루며 결과에 도달하는지를 설계한다.
 
 ## SRP (Single Responsibility Principle)
 
-**SRP**(단일 책임 원칙)은 클래스가 단 하나의 책임만을 가져야 한다는 원칙이다. 소프트웨어의 유지보수성과 재사용성을 높이는 데 도움을 준다.
+**SRP**(단일 책임 원칙)은 소프트웨어 설계의 원칙 중 하나로, 클래스가 오직 하나의 책임만을 가져야 한다는 것을 의미한다.
+여기서 '책임'은 '변경의 이유'를 의미한다. 이 원칙은 소프트웨어의 유지보수성을 향상시키고, 코드의 복잡성을 줄이며, 재사용성을 높이는 데 목적이 있다.
+
+SRP를 따르면 시스템을 더 쉽게 이해하고 수정할 수 있으며, 오류의 위험을 줄이고, 코드베이스의 유연성을 향상시킬 수 있다.
 
 ## Atomic Design
 
 **Atomic Design**은 웹 페이지를 구성하는 요소를 원자, 분자, 유기체, 템플릿, 페이지로 나누어 생각하는 디자인 시스템이다. 디자인의 일관성을 유지하고 효율적으로 구축할 수 있다.
 
-## React component와 props
-
-**React component**는 React 앱을 구성하는 재사용 가능한 코드 조각이다. UI의 독립적인 부분을 나타낸다.
-
-**Props**는 부모 컴포넌트로부터 자식 컴포넌트로 데이터를 전달할 때 사용되는 방법이다. 컴포넌트의 초기 구성요소 또는 동적 UI 업데이트에 사용된다.
-
 >**참고 링크**
 >
+>- [React 공식 문서](https://reactjs.org/docs/components-and-props.html)
 >- [REST API](https://restfulapi.net/)
 >- [GraphQL](https://graphql.org/)
 >- [JSON](https://www.json.org/json-en.html)
 >- [선언형 vs 명령형 프로그래밍](https://tylermcginnis.com/imperative-vs-declarative-programming/)
 >- [단일 책임 원칙](https://en.wikipedia.org/wiki/Single-responsibility_principle)
 >- [Atomic Design](https://atomicdesign.bradfrost.com/)
->- [React 공식 문서](https://reactjs.org/docs/components-and-props.html)
