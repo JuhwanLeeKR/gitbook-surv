@@ -114,30 +114,42 @@ greetWorld("World"); // 출력: Hello, World
 이 방법은 상태를 필요로 하는 모든 컴포넌트가 일관된 상태를 유지할 수 있도록 하며, 상태 관리의 복잡성을 줄이는 데 도움이 된다.
 
 ```jsx
+import React, { useState } from 'react';
+
 function ParentComponent() {
   const [sharedState, setSharedState] = useState(0);
 
+  // 상태 증가 함수
   const handleIncrementState = () => setSharedState(prevState => prevState + 1);
+  // 상태 감소 함수
   const handleDecrementState = () => setSharedState(prevState => prevState - 1);
 
   return (
     <div>
-      <ChildComponentA handleIncrementState={handleIncrementState} />
-      <ChildComponentB handleDecrementState={handleDecrementState} />
+      <h2>Parent Shared State: {sharedState}</h2>
+      <ChildComponentA sharedState={sharedState} handleIncrementState={handleIncrementState} />
+      <ChildComponentB sharedState={sharedState} handleDecrementState={handleDecrementState} />
     </div>
   );
 }
 
-function ChildComponentA({ handleIncrementState }) {
-  // ChildComponentA에서 handleIncrementState를 사용하여 상태 증가
-  return <button onClick={handleIncrementState}>Increase</button>;
+function ChildComponentA({ sharedState, handleIncrementState }) {
+  return (
+    <div>
+      <p>Child A State: {sharedState}</p>
+      <button onClick={handleIncrementState}>Increase</button>
+    </div>
+  );
 }
 
-function ChildComponentB({ handleDecrementState }) {
-  // ChildComponentB에서 handleDecrementState를 사용하여 상태 감소
-  return <button onClick={handleDecrementState}>Decrease</button>;
+function ChildComponentB({ sharedState, handleDecrementState }) {
+  return (
+    <div>
+      <p>Child B State: {sharedState}</p>
+      <button onClick={handleDecrementState}>Decrease</button>
+    </div>
+  );
 }
-
 ```
 
 >**참고 링크**
