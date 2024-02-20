@@ -32,16 +32,16 @@ CRUD에 대해 HTTP Method를 대입. Read는 Collection(복수)과 Item(Element
 
 ### 1. 폴더 생성, 패키지 초기화, `.gitignore` 생성
 
-```zsh
+```bash
 mkdir express-demo-app
 cd mkdir express-demo-app
 ```
 
-```zsh
+```bash
 npm init -y
 ```
 
-```zsh
+```bash
 touch .gitignore
 echo "/node_modules/" > .gitignore # 내용 작성
 ```
@@ -50,7 +50,7 @@ echo "/node_modules/" > .gitignore # 내용 작성
 
 TypeScript
 
-```zsh
+```bash
 npm i -D typescript
 npx tsc --init
 
@@ -62,13 +62,13 @@ npm i express
 npm i -D @types/express
 ```
 
-```zsh
+```bash
 npx eslint --init
 ```
 
 - eslint 설정 예시
 
-```zsh
+```bash
 ✔ How would you like to use ESLint? · style
 ✔ What type of modules does your project use? · esm
 ✔ Which framework does your project use? · none
@@ -99,7 +99,7 @@ npm i -D nodemon
 
 ### 4. CORS를 위한 [CORS 미들웨어](https://expressjs.com/en/resources/middleware/cors.html) 설치
 
-```zsh
+```bash
 npm i cors
 npm i -D @types/cors
 ```

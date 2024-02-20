@@ -4,19 +4,19 @@
 
 ### 1. 폴더 생성 및 패키지 생성
 
-```zsh
+```bash
 mkdir project-init
 
 cd project-init
 ```
 
-```zsh
+```bash
 npm init -y
 ```
 
 ### 2. `.gitignore` 파일을 작성
 
-```zsh
+```bash
 touch .gitignore
 ```
 
@@ -27,7 +27,7 @@ touch .gitignore
 
 ### 3. 타입스크립트 설정
 
-```zsh
+```bash
 npm i -D typescript
 
 npx tsc --init # 초기화 및 tsconfig.json 파일 생성
@@ -53,7 +53,7 @@ npx tsc --init # 초기화 및 tsconfig.json 파일 생성
 
 ### 5. ESLint 설정
 
-```zsh
+```bash
 npm i -D eslint
 
 npx eslint --init
@@ -113,7 +113,7 @@ module.exports = {
 
 ### 8. 리액트 설치
 
-```zsh
+```bash
 npm i react react-dom
 
 npm i -D @types/react @types/react-dom
@@ -121,7 +121,7 @@ npm i -D @types/react @types/react-dom
 
 ### 9. 테스팅 도구 설치
 
-```zsh
+```bash
 npm i -D jest @types/jest @swc/core @swc/jest \
     jest-environment-jsdom \
     @testing-library/react @testing-library/jest-dom
@@ -158,7 +158,7 @@ module.exports = {
 
 ### 11. Parcel (bundler) 설치
 
-```zsh
+```bash
 npm i -D parcel
 ```
 
@@ -182,13 +182,13 @@ npm i -D parcel
 
 해당 설정을 해주어야 static 폴더의 파일을 정적 파일로 Serving할 수 있다(Assets)
 
-```zsh
+```bash
 npm i -D parcel-reporter-static-files-copy
 ```
 
 - 정적 파일 폴더 생성
 
-```zsh
+```bash
 touch static # parcel-reporter-static-files-copy 기본 폴더
 ```
 
@@ -272,13 +272,13 @@ export default function App() {
 
 동일한 환경에서 개발하기 위함 (fnm에서 `.nvmrc`, `.node-version` 파일을 감지하고 버전을 맞춰 줌)
 
-```zsh
+```bash
 touch .nvmrc
 ```
 
 [`.nvmrc` 파일 작성 가이드 바로가기](/environment/nvmrc.md)
 
-```zsh
+```bash
 v18.17.0 # 프로젝트에 사용된 버전을 명시
 ```
 

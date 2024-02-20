@@ -6,7 +6,7 @@
 
 - Using **with Typescript**
 
-```zsh
+```bash
 npx ts-node # 실행
 
 Ctrl + C or .exit # 종료
