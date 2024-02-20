@@ -32,5 +32,6 @@
   - [타입 (Type)](/clean-code-js/type.md)
   - [경계값 (Boundary Value)](/clean-code-js/boundary-value.md)
   - [분기 다루기 (Branch Handling)](/clean-code-js/branch-handling.md)
+  - [배열 다루기 (Array)](/clean-code-js/array.md)
 
 - [React](/clean-code-react/README.md)
