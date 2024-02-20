@@ -4,12 +4,14 @@
 
 ## SETTINGS
 
-- [개발 환경 설정 (with React)](/environment/README.md)
-  - [Initial Settings](/environment/initial-settings.md)
-  - [Typescript](/environment/typscript.md)
-  - [Testing Library](/environment/testing-library.md)
-  - [ESLint](/environment/eslint.md)
-  - [.nvmrc 파일 작성 가이드](/environment/nvmrc.md)
+- [개발 환경 설정](/environment/README.md)
+  - [TS+React+Jest+ESLint+Parcel](/environment/initial-settings.md)
+  - [Express](/environment/express-initial-settings.md)
+  - [misc](/environment/misc/README.md)
+    - [Typescript](/environment/typscript.md)
+    - [Testing Library](/environment/testing-library.md)
+    - [ESLint](/environment/eslint.md)
+    - [.nvmrc 파일 작성 가이드](/environment/nvmrc.md)
 
 ## DEVELOPMENT
 
@@ -17,12 +19,11 @@
   - [Jsx](/react/jsx.md)
   - [Component](/react/react-component.md)
   - [State](/react/react-state.md)
-  - [Hook](react/hook.md)
+  - [Hooks](react/hooks.md)
   <!-- - [📎 Links](/react/links.md) -->
-- [Express](/express/README.md)
-  - [Express란?](/express/express.md)
-- [Common](/common/README.md)
-  - [Fetch](/common/fetch.md)
+<!-- - [Express](/express/README.md) -->
+<!-- - [Common](/common/README.md)
+  - [Fetch](/common/fetch.md) -->
 
 ## CLEAN CODE
 
