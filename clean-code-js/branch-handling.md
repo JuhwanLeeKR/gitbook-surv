@@ -177,3 +177,204 @@ function getActiveUserName(user) {
   return user.name || '이름없음'
 }
 ```
+
+## Early Return
+
+```js
+function loginService(isLogin, user) {
+  if (!isLogin) {
+    if (checkToken()) {
+      if (!user.nickname) {
+        return registerUser(user)
+      } else {
+        refreshToken()
+
+        return '로그인 성공!'
+      }
+    } else {
+      throw new Error('No token!')
+    }
+  }
+}
+```
+
+```js
+function loginService(isLogin, user) {
+  // Early Return
+  if (!isLogin) {
+    return
+  }
+  if (!checkToken()) {
+    throw new Error('No token!')
+  }
+  if (!user.nickname) {
+    return registerUser(user)
+  }
+  refreshToken()
+
+  return '로그인 성공!'
+}
+```
+
+## 부정조건문 지양하기
+
+1. 생각을 여러번 해야할 수 있다
+2. 기본적으로 프로그래밍은 if 부터 먼저 사용하게 된다
+
+```js
+if () { // 참
+} else {
+}
+```
+
+- 부정조건문을 사용할 때
+
+1. Early Return
+2. Form Validation
+3. 보안, 검사 로직
+
+## Default Case 고려하기
+
+```js
+function sum(x, y) {
+  x = x || 1
+  y = y || 1
+  return x + y
+}
+
+sum()
+```
+
+```js
+function registerDay(userInputDay) {
+  switch (userInputDay) {
+    case '월': // some code
+    case '화': // some code
+    case '수': // some code
+    case '목': // some code
+    case '금': // some code
+    case '토': // some code
+    case '일': // some code
+    default:
+      throw Error('오류!')
+  }
+}
+```
+
+```js
+function safeParseInt(number, radix) {
+  return parseInt(number, radix || 10)
+}
+```
+
+## 명시적인 연산자 사용 지향하기
+
+연산자 우선 순위를 외우기 보다는 괄호`()`를 사용하는 것이 좋다.
+
+전위연산자(++i) 후위연산자(i++)도 헷갈리는 경우가 많다.
+
+```js
+number-- // ❌
+number = number - 1 // ✅
+
+number++ // ❌
+number = number + 1 // ✅
+```
+
+## Null 병합 연산자 (Nullish coalescing operator)
+
+`null` || `undefined` => `&&`
+`falsy` => `||`
+
+- 실수하기 좋은 사례
+
+```js
+function helloWord(message) {
+  if (!message) {
+    return 'Hello! World'
+  }
+
+  return `Hello! ${message || 'World'}`
+}
+
+console.log(helloWord(undefined)) // Hello! World
+console.log(helloWord(0)) // Hello! World ❌
+```
+
+```js
+console.log(null || undefined ?? 'foo') // ❌ 사람들이 실수를 너무 많이하기 때문에 에러를 뱉는다
+console.log((null || undefined) ?? 'foo') // ✅
+```
+
+## 드모르간의 법칙
+
+AND 연산과 OR 연산을 이용한 연산 간의 관계로 드 모르간의 상대성 이론
+프로그래밍에서는 부정 연산을 다룰때 편하다.
+
+```js
+//not (A or B) === (not A) and (not B)
+!(A || B) === !A && !B
+
+//not (A and B) === (not A) or (not B)
+!(A && B) === !A || !B
+```
+
+```js
+// 1. 유저와 토큰이 모두 true일 경우
+const isValidUser = true
+const isValidToken = true
+
+if (isValidUser && isValidToken) {
+  console.log('로그인 성공!')
+}
+
+// 헷갈릴 수 있다
+if (!(isValidUser && isValidToken)) {
+  console.log('로그인 실패!')
+}
+
+// 변환 (!A || !B)
+if (!isValidUser || !isValidToken) {
+  console.log('로그인 실패!')
+}
+```
+
+### 1. 유저와 토큰이 모두 true일 경우
+
+```js
+const isValidUser = true
+const isValidToken = true
+
+if (isValidUser && isValidToken) {
+  console.log('로그인 성공!')
+}
+
+// 헷갈릴 수 있다
+if (!(isValidUser && isValidToken)) {
+  console.log('로그인 실패!')
+}
+// 변환 (!A || !B)
+if (!isValidUser || !isValidToken) {
+  console.log('로그인 실패!')
+}
+```
+
+### 2. 남자거나 여자거나
+
+```js
+const isMale = true // 서버에서
+const isFemale = true// 서버에서
+
+if (isMale || isFemale) {
+  console.log('인증 완료!')
+}
+
+// 헷갈릴 수 있다
+if (!(isMale || isFemale)) {
+  console.log('인증 실패!')
+}
+// !A && !B
+if (!isMale && !isFemale) {
+  console.log('인증 실패!')
+}
+```
