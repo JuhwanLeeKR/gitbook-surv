@@ -21,9 +21,8 @@
   - [State](/react/react-state.md)
   - [Hooks](react/hooks.md)
   <!-- - [📎 Links](/react/links.md) -->
-<!-- - [Express](/express/README.md) -->
-<!-- - [Common](/common/README.md)
-  - [Fetch](/common/fetch.md) -->
+- [Data handling](/data/README.md)
+  - [Fetch](/data/fetch.md)
 
 ## CLEAN CODE
 
