@@ -13,14 +13,14 @@
     - [ESLint](/environment/eslint.md)
     - [.nvmrc 파일 작성 가이드](/environment/nvmrc.md)
 
-## DEVELOPMENT
+## REACT & FRONTEND DEVELOPMENT
 
 - [React](/react/README.md)
   - [Jsx](/react/jsx.md)
   - [Component](/react/react-component.md)
   - [State](/react/react-state.md)
-  - [Hooks](react/hooks.md)
-  <!-- - [📎 Links](/react/links.md) -->
+  - [Hooks](/react/hooks.md)
+  - [Advanced](/react/advanced.md)
 - [Data handling](/data/README.md)
   - [Fetch](/data/fetch.md)
 - [Test](/test/README.md)
@@ -28,6 +28,15 @@
   - [React Testing Library](/test/react-testing-library.md)
   - [MSW (Mock Service Worker)](/test/msw.md)
   - [Playwright](/test/playwright.md)
+
+## DEPENDENCY INJECTION & METADATA
+
+- [DI & Metadata](/di-and-metadata/README.md)
+  - [TSyringe](/di-and-metadata/tsyringe.md)
+  - [의존성 주입(Dependency Injection)](/di-and-metadata/dependency-injection.md)
+  - [reflect-metadata](/di-and-metadata/reflect-metadata.md)
+  - [singleton (싱글톤)](/di-and-metadata/singleton.md)
+  - [Reflect](/di-and-metadata/reflect.md)
 
 ## CLEAN CODE
 
@@ -43,5 +52,4 @@
   - [에러 다루기 (Error handling)](/clean-code-js/error-handling.md)
   - [Browser & Web API](/clean-code-js/browser.md)
   - [함께하기](/clean-code-js/together.md)
-
 - [React](/clean-code-react/README.md)
