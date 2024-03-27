@@ -41,7 +41,7 @@
 ## Megatera
 
 - [생존코스](/megatera/README.md)
-  - [6주차 키워드 정리](/megatera/week-6)
+  - [6주차 키워드 정리](/megatera/week-6.md)
 
 ## CLEAN CODE
 
