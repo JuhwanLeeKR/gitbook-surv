@@ -29,14 +29,19 @@
   - [MSW (Mock Service Worker)](/test/msw.md)
   - [Playwright](/test/playwright.md)
 
-## DEPENDENCY INJECTION & METADATA
+<!-- ## DEPENDENCY INJECTION & METADATA
 
 - [DI & Metadata](/di-and-metadata/README.md)
   - [TSyringe](/di-and-metadata/tsyringe.md)
   - [의존성 주입(Dependency Injection)](/di-and-metadata/dependency-injection.md)
   - [reflect-metadata](/di-and-metadata/reflect-metadata.md)
   - [singleton (싱글톤)](/di-and-metadata/singleton.md)
-  - [Reflect](/di-and-metadata/reflect.md)
+  - [Reflect](/di-and-metadata/reflect.md) -->
+
+## Megatera
+
+- [생존코스](/megatera/README.md)
+  - [6주차 키워드 정리](/megatera/week-6)
 
 ## CLEAN CODE
 
