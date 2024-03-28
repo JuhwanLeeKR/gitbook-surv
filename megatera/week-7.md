@@ -5,8 +5,11 @@
 `HTML DOM API`는 웹 문서의 객체 모델에 접근하고 조작할 수 있는 메서드와 속성의 모음이다. 웹 페이지의 구조, 스타일, 내용 등을 동적으로 변경할 수 있게 해준다. 이 API를 사용하면 자바스크립트를 통해 HTML 요소를 생성, 수정, 삭제하거나 이벤트를 처리할 수 있다.
 
 > 선택: getElementById, querySelector, getElementsByClassName 등의 메서드를 사용하여 DOM 트리 내의 요소를 선택할 수 있다.
+>
 > 조작: 선택한 요소의 내용(innerHTML), 속성(setAttribute), 스타일(style) 등을 변경할 수 있다.
+>
 > 이벤트 처리: 요소에 이벤트 리스너(addEventListener)를 추가하여 사용자의 액션(클릭, 키보드 입력 등)에 반응할 수 있다.
+>
 > 생성 및 삭제: createElement, removeChild 등의 메서드를 사용하여 새로운 요소를 생성하거나 기존 요소를 삭제할 수 있다.
 
 ```js
@@ -148,7 +151,7 @@ function App() {
 
 `MemoryRouter`는 React Router의 하나로, 주로 테스트 환경이나 서버 사이드 렌더링에서 사용되며, 실제 URL을 변경하지 않고 라우팅을 시뮬레이션할 수 있다. 이는 Jest와 같은 테스트 프레임워크에서 React 컴포넌트의 라우팅 동작을 테스트할 때 매우 유용하다.
 
-```jsx
+```js
 import React from 'react';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
@@ -209,5 +212,7 @@ history.pushState({ page: 1 }, "title 1", "?page=1");
   - 직접 History API를 사용할 때는 라우팅 로직을 세심하게 관리해야 한다.
 
 > BrowserRouter vs MemoryRouter: BrowserRouter는 실제 브라우저 환경에서 사용되며, 사용자의 URL 변경을 통해 SPA 내에서의 페이지 전환을 처리한다. 반면, MemoryRouter는 메모리에 라우팅 정보를 저장하기 때문에, URL 변경 없이 테스트나 서버 사이드 렌더링 등의 환경에서 유용하게 사용된다.
+>
 > RouterProvider: React Router v6에서 도입된 이 컴포넌트는 새로운 라우팅 엔진과 함께 사용되어 더 나은 성능과 유연성을 제공한다. 기존의 <BrowserRouter> 등과 비교했을 때, 라우팅 구성이 더 간결하고 선언적이다.
+>
 > History API: 직접 History API를 사용하는 것은 라우터 라이브러리를 사용하는 것보다 더 많은 제어를 제공하지만, 복잡성이 증가하고 브라우저 호환성 문제를 직접 처리해야 한다는 단점이 있다. React Router와 같은 라이브러리는 이러한 복잡성을 추상화하여 개발자에게 간편한 인터페이스를 제공한다.
