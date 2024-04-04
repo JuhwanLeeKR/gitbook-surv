@@ -28,6 +28,7 @@
   - [React Testing Library](/test/react-testing-library.md)
   - [MSW (Mock Service Worker)](/test/msw.md)
   - [Playwright](/test/playwright.md)
+-
 
 <!-- ## DEPENDENCY INJECTION & METADATA
 
@@ -43,6 +44,7 @@
 - [생존코스](/megatera/README.md)
   - [6주차 키워드 정리](/megatera/week-6.md)
   - [7주차 키워드 정리](/megatera/week-7.md)
+  - [8주차 키워드 정리](/megatera/week-8.md)
 
 ## CLEAN CODE
 
