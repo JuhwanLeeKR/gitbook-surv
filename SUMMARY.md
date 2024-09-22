@@ -21,6 +21,8 @@
   - [State](/react/react-state.md)
   - [Hooks](/react/hooks.md)
   - [Advanced](/react/advanced.md)
+- [Next.js](/next/README.md)
+  - [사전 렌더링 이해하기](/next/pre-rendering.md)
 - [Data handling](/data/README.md)
   - [Fetch](/data/fetch.md)
 - [Test](/test/README.md)
